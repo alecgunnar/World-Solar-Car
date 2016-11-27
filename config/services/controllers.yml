@@ -1,5 +1,5 @@
 services:
   homepage_controller:
-    class: 'SolarCar\Homepage\Controller'
+    class: 'SolarCar\Support\Controller\RenderableController'
     arguments:
       - '@homepage_view'
