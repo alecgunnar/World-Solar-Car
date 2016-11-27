@@ -9,10 +9,13 @@
         }
     ],
     "require": {
-        "alecgunnar/maverick": "dev-master"
+        "alecgunnar/maverick": "dev-master",
+        "twig/twig": "^1.28"
     },
     "autoload": {
         "psr-4": {
+            "SolarCar\\": "src/",
+            "SolarCar\\Support\\": "lib/",
             "Cached\\": "cache/"
         }
     }

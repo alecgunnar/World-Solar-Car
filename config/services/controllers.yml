@@ -1,0 +1,5 @@
+services:
+  homepage_controller:
+    class: 'SolarCar\Homepage\Controller'
+    arguments:
+      - '@homepage_view'

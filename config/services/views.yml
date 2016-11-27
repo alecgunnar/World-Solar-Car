@@ -1,0 +1,23 @@
+services:
+  ##################################################
+  # Twig
+  ##################################################
+
+  twig.environment:
+    class: 'Twig_Environment'
+    arguments:
+      - '@twig.loader.file_system'
+
+  twig.loader.file_system:
+    class: 'Twig_Loader_Filesystem'
+    arguments:
+      - '%root_dir%/templates'
+
+  ##################################################
+  # Twig Views
+  ##################################################
+
+  homepage_view:
+    class: 'SolarCar\Homepage\View'
+    arguments:
+      - '@twig.environment'
