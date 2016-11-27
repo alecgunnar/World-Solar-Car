@@ -1,6 +1,11 @@
+imports:
+
+  - resource: 'environment/test.yml'
+
 services:
   whoops.run:
     class: 'Whoops\Run'
     calls:
       - ['pushHandler', ['@maverick.handler.whoops.safe_render']]
       - ['pushHandler', ['@maverick.handler.whoops.http_exception']]
+

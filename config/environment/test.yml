@@ -1,0 +1,21 @@
+parameters:
+  routes:
+    welcome:
+      path: '/'
+      call: 'coming_soon_controller'
+
+services:
+
+  ##################################################
+  # Coming soon configuration
+  ##################################################
+
+  coming_soon_controller:
+    class: 'SolarCar\Support\Controller\RenderableController'
+    arguments:
+      - '@coming_soon_view'
+
+  coming_soon_view:
+    class: 'SolarCar\ComingSoon\View'
+    arguments:
+      - '@twig.environment'
