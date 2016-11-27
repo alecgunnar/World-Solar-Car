@@ -1,0 +1,19 @@
+{
+    "name": "alecgunnar/basic-application",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alec Carpenter",
+            "email": "alecgunnar@gmail.com"
+        }
+    ],
+    "require": {
+        "alecgunnar/maverick": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cached\\": "cache/"
+        }
+    }
+}

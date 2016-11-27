@@ -1,0 +1,9 @@
+parameters:
+  is_debug: true
+
+services:
+  fast_route.dispatcher:
+    class: FastRoute\Dispatcher
+    factory: 'FastRoute\simpleDispatcher'
+    arguments:
+      - '@maverick.router.dispatcher.utility.collection_processor'
