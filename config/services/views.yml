@@ -1,4 +1,9 @@
+parameters:
+
+  cached_templates_dir: 'twig'
+
 services:
+
   ##################################################
   # Twig
   ##################################################
@@ -7,11 +12,14 @@ services:
     class: 'Twig_Environment'
     arguments:
       - '@twig.loader.file_system'
+      - {debug: '%is_debug%', cache: '@=parameter("is_debug") ? false : parameter("root_dir") ~ "/" ~ parameter("cache_dir") ~ "/" ~ parameter("cached_templates_dir")', strict_variables: '%is_debug%'}
 
   twig.loader.file_system:
     class: 'Twig_Loader_Filesystem'
     arguments:
       - '%root_dir%/templates'
+    calls:
+      - ['addPath', ['%root_dir%/templates/layouts', 'layouts']]
 
   ##################################################
   # Twig Views
